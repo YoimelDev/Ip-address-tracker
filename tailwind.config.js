@@ -11,7 +11,9 @@ module.exports = {
         'sans': ['Rubik', ...defaultTheme.fontFamily.sans],
       },
       backgroundImage: {
-        'pattern-bg': "url('src/img/pattern-bg.png')"
+        'pattern-bg': "url('src/img/pattern-bg.png')",
+        'icon-arrow': "url('src/img/icon-arrow.svg')",
+        'icon-location': "url('src/img/icon-location.svg')"
       }
     }
   },
