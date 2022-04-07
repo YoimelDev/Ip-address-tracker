@@ -10,6 +10,9 @@ module.exports = {
       fontFamily: {
         'sans': ['Rubik', ...defaultTheme.fontFamily.sans],
       },
+      backgroundImage: {
+        'pattern-bg': "url('src/img/pattern-bg.png')"
+      }
     }
   },
   plugins: [],

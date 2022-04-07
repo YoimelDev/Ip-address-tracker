@@ -4,7 +4,10 @@ function App() {
 
 	return (
 		<>
-			<Header />
+			<div class="h-[35vh] bg-center bg-cover bg-[url('src/img/pattern-bg.png')]">
+				<Header />
+			</div>
+
 		</>
 	)
 }
