@@ -6,11 +6,11 @@ export const Form = () => {
             <div className="relative w-80">
                 <input
                     type="text"
-                    className="w-full px-5 py-3 rounded-xl text-lg outline-0"
+                    className="w-full px-5 py-3 rounded-2xl text-lg outline-0"
                 />
                 <button
                     type="submit"
-                    className="w-14 h-[3.25rem] bg-black rounded-r-lg absolute right-0 cursor-pointer hover:bg-[#2b2b2b] transition-all"
+                    className="w-14 h-[3.25rem] bg-black rounded-r-2xl absolute right-0 cursor-pointer hover:bg-[#2b2b2b] transition-all"
                 >
                     <div className="m-auto w-3 h-4 bg-no-repeat bg-[url('src/img/icon-arrow.svg')]"></div>
                 </button>
