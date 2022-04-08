@@ -3,7 +3,7 @@ import React from 'react'
 export const Form = () => {
     return (
         <form className="flex justify-center items-center mt-4">
-            <div className="relative w-80">
+            <div className="relative w-80 md:w-[35rem]">
                 <input
                     type="text"
                     className="w-full px-5 py-3 rounded-2xl text-lg outline-0"
