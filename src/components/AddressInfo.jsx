@@ -3,6 +3,7 @@ import React from 'react'
 export const AddressInfo = ({ addressInfo }) => {
 
     const { ip, location, timezone, isp } = addressInfo
+
     return (
         <div
             className='flex flex-col md:flex-row justify-center items-center md:items-start gap-5 w-80 md:w-[95%] xl:w-[45rem] mx-auto mt-6 py-6 bg-white rounded-2xl'>

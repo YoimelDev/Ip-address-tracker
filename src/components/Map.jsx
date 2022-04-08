@@ -6,8 +6,8 @@ const iconLocation = new Icon({
     iconSize: [40, 60]
 });
 
-export const Map = () => {
-    const position = [51.505, -0.09]
+export const Map = ({ addressInfo }) => {
+    const position = [addressInfo.lat, addressInfo.lng]
 
     return (
         <MapContainer

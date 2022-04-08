@@ -3,16 +3,13 @@ import { AddressInfo } from "./components/AddressInfo"
 import { Form } from "./components/Form"
 import { Header } from "./components/Header"
 import { Map } from "./components/Map"
+import { Spinner } from './components/Spinner'
 
 function App() {
 
 	const [currentIp, setCurrentIp] = useState('')
-	const [addressInfo, setAddressInfo] = useState({
-		ip: '',
-		location: '',
-		timezone: '',
-		isp: ''
-	})
+	const [addressInfo, setAddressInfo] = useState({})
+	const [charge, setcharge] = useState(true)
 
 	useEffect(() => {
 		const queryApi = async () => {
@@ -30,7 +27,7 @@ function App() {
 	useEffect(() => {
 		if (currentIp) {
 			const queryApi = async () => {
-				const url = `https://geo.ipify.org/api/v2/country?apiKey=at_wwGTfkAxaaf1s2TAqsYCbsurol9R3&ipAddress=${currentIp}`
+				const url = `https://geo.ipify.org/api/v2/country,city?apiKey=at_wwGTfkAxaaf1s2TAqsYCbsurol9R3&ipAddress=${currentIp}`
 
 				const resp = await fetch(url)
 				const data = await resp.json()
@@ -39,10 +36,13 @@ function App() {
 					ip: data.ip,
 					location: data.location,
 					timezone: data.location.timezone,
-					isp: data.isp
+					isp: data.isp,
+					lat: data.location.lat,
+					lng: data.location.lng
 				}
 
 				setAddressInfo(objeto)
+				setcharge(false)
 			}
 
 			queryApi()
@@ -60,12 +60,18 @@ function App() {
 					setCurrentIp={setCurrentIp}
 				/>
 
-				<AddressInfo
+				{charge && <Spinner />}
+
+				{addressInfo.ip && <AddressInfo
 					addressInfo={addressInfo}
-				/>
+				/>}
+
 			</div>
 
-			<Map />
+			{addressInfo.ip && <Map
+				addressInfo={addressInfo}
+			/>}
+
 		</>
 	)
 }
