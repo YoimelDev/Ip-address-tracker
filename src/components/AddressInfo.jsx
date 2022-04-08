@@ -17,7 +17,7 @@ export const AddressInfo = () => {
                 <p className="text-[#969696] text-xs font-bold font tracking-widest mb-1">
                     LOCATION
                 </p>
-                <h2 className='text-xl md:text-lg font-medium w-[6.3rem]'>
+                <h2 className='text-xl md:text-lg font-medium md:w-[6.3rem]'>
                     Broklyn, NY 10001
                 </h2>
             </div>
@@ -35,7 +35,7 @@ export const AddressInfo = () => {
                 <p className="text-[#969696] text-xs font-bold font tracking-widest mb-1">
                     ISP
                 </p>
-                <h2 className='text-xl md:text-lg font-medium w-[6.3rem]'>
+                <h2 className='text-xl md:text-lg font-medium md:w-[6.3rem]'>
                     SpaceX Starlink
                 </h2>
             </div>
