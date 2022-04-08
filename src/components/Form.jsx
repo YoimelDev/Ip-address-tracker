@@ -8,6 +8,7 @@ export const Form = ({ setCurrentIp }) => {
         e.preventDefault()
 
         setCurrentIp(ip)
+        setIp('')
     }
 
     return (
@@ -20,6 +21,7 @@ export const Form = ({ setCurrentIp }) => {
                     type="text"
                     className="w-full px-5 py-3 rounded-2xl text-lg outline-0"
                     onChange={e => setIp(e.target.value)}
+                    value={ip}
                 />
                 <button
                     type="submit"
