@@ -13,7 +13,7 @@ export const Map = ({ addressInfo }) => {
         <MapContainer
             style={{ zIndex: -1 }}
             center={position}
-            zoom={13}
+            zoom={15}
             scrollWheelZoom={false}
         >
             <TileLayer

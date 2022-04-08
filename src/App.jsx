@@ -26,6 +26,9 @@ function App() {
 
 	useEffect(() => {
 		if (currentIp) {
+			setcharge(true)
+			setAddressInfo('')
+
 			const queryApi = async () => {
 				const url = `https://geo.ipify.org/api/v2/country,city?apiKey=at_wwGTfkAxaaf1s2TAqsYCbsurol9R3&ipAddress=${currentIp}`
 
