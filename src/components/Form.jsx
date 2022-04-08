@@ -1,12 +1,25 @@
-import React from 'react'
+import { useState } from 'react'
 
-export const Form = () => {
+export const Form = ({ setCurrentIp }) => {
+
+    const [ip, setIp] = useState('')
+
+    const handelSubmit = (e) => {
+        e.preventDefault()
+
+        setCurrentIp(ip)
+    }
+
     return (
-        <form className="flex justify-center items-center mt-4">
+        <form
+            className="flex justify-center items-center mt-4"
+            onSubmit={handelSubmit}
+        >
             <div className="relative w-80 md:w-[35rem]">
                 <input
                     type="text"
                     className="w-full px-5 py-3 rounded-2xl text-lg outline-0"
+                    onChange={e => setIp(e.target.value)}
                 />
                 <button
                     type="submit"
