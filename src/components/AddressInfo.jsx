@@ -1,6 +1,8 @@
 import React from 'react'
 
-export const AddressInfo = () => {
+export const AddressInfo = ({ addressInfo }) => {
+
+    const { ip, location, timezone, isp } = addressInfo
     return (
         <div
             className='flex flex-col md:flex-row justify-center items-center md:items-start gap-5 w-80 md:w-[95%] xl:w-[45rem] mx-auto mt-6 py-6 bg-white rounded-2xl'>
@@ -9,7 +11,7 @@ export const AddressInfo = () => {
                     IP ADDRESS
                 </p>
                 <h2 className='text-xl md:text-lg font-medium'>
-                    192.212.174.101
+                    {ip}
                 </h2>
             </div>
 
@@ -18,7 +20,7 @@ export const AddressInfo = () => {
                     LOCATION
                 </p>
                 <h2 className='text-xl md:text-lg font-medium md:w-[6.3rem]'>
-                    Broklyn, NY 10001
+                    {location.region}, {location.country}
                 </h2>
             </div>
 
@@ -27,7 +29,7 @@ export const AddressInfo = () => {
                     TIMEZONE
                 </p>
                 <h2 className='text-xl md:text-lg font-medium'>
-                    UTC -05:00
+                    UTC {timezone}
                 </h2>
             </div>
 
@@ -36,7 +38,7 @@ export const AddressInfo = () => {
                     ISP
                 </p>
                 <h2 className='text-xl md:text-lg font-medium md:w-[6.3rem]'>
-                    SpaceX Starlink
+                    {isp}
                 </h2>
             </div>
         </div>
