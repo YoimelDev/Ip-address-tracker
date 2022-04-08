@@ -4,7 +4,7 @@ export const Form = ({ setCurrentIp }) => {
 
     const [ip, setIp] = useState('')
 
-    const handelSubmit = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault()
 
         setCurrentIp(ip)
@@ -14,7 +14,7 @@ export const Form = ({ setCurrentIp }) => {
     return (
         <form
             className="flex justify-center items-center mt-4"
-            onSubmit={handelSubmit}
+            onSubmit={handleSubmit}
         >
             <div className="relative w-80 md:w-[35rem]">
                 <input
