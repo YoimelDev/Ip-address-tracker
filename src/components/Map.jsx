@@ -22,7 +22,7 @@ export const Map = ({ addressInfo }) => {
             />
             <Marker
                 position={position}
-                icon={iconLocation}
+            // icon={iconLocation}
             />
         </MapContainer>
 
