@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { AddressInfo } from "./components/AddressInfo"
+import { Error } from './components/Error'
 import { Form } from "./components/Form"
 import { Header } from "./components/Header"
 import { Map } from "./components/Map"
@@ -10,6 +11,8 @@ function App() {
 	const [currentIp, setCurrentIp] = useState('')
 	const [addressInfo, setAddressInfo] = useState({})
 	const [charge, setcharge] = useState(true)
+	const [error, setError] = useState(false)
+	const [errorMessage, setErrorMessage] = useState('')
 
 	useEffect(() => {
 		const queryApi = async () => {
@@ -35,16 +38,27 @@ function App() {
 				const resp = await fetch(url)
 				const data = await resp.json()
 
-				const objeto = {
-					ip: data.ip,
-					location: data.location,
-					timezone: data.location.timezone,
-					isp: data.isp,
-					lat: data.location.lat,
-					lng: data.location.lng
+				console.log(data.code);
+
+				if (data.code == 422) {
+					setErrorMessage(data.messages)
+					setError(true)
+
+					return
+				} else {
+					setError(false)
+					const objeto = {
+						ip: data.ip,
+						location: data.location,
+						timezone: data.location.timezone,
+						isp: data.isp,
+						lat: data.location.lat,
+						lng: data.location.lng
+					}
+
+					setAddressInfo(objeto)
 				}
 
-				setAddressInfo(objeto)
 				setcharge(false)
 			}
 
@@ -58,6 +72,8 @@ function App() {
 		<>
 			<div className="h-[35vh] bg-center bg-cover bg-[url('src/img/pattern-bg.png')]">
 				<Header />
+
+				{error && <Error errorMessage={errorMessage} />}
 
 				<Form
 					setCurrentIp={setCurrentIp}
