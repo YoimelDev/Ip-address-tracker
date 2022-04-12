@@ -37,8 +37,6 @@ function App() {
 				const resp = await fetch(url)
 				const data = await resp.json()
 
-				console.log(data.code);
-
 				if (data.code == 422) {
 					setErrorMessage(data.messages)
 					setError(true)
