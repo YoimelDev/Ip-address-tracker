@@ -16,12 +16,11 @@ function App() {
 
 	useEffect(() => {
 		const queryApi = async () => {
-			const url = 'https://geolocation-db.com/json'
+			const url = 'https://api.ipify.org?format=json'
 
 			const resp = await fetch(url)
 			const data = await resp.json()
-
-			setCurrentIp(data.IPv4)
+			setCurrentIp(data.ip)
 		}
 
 		queryApi()
