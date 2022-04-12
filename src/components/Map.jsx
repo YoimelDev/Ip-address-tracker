@@ -2,7 +2,7 @@ import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
 import { Icon } from 'leaflet'
 
 const iconLocation = new Icon({
-    iconUrl: "./src/img/icon-location.svg",
+    iconUrl: "https://yoimeldev.github.io/Ip-address-tracker/src/img/icon-location.svg",
     iconSize: [40, 60]
 });
 
